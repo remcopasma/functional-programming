@@ -8,7 +8,7 @@ Op school gewerkt met aantal medestudenten. Geprobeerd data op te halen en onder
 
 
 ## Onderzoeksvraag
-1. Is er het afgelopen jaar(2018) veel verschil gekomen in de hoeveelheid engelse boeken en nederlandse boeken?
+* Is er in de afgelopen 8 jaar veel verschil gekomen in de hoeveelheid engelse boeken en nederlandse boeken ten opzichte van 2002 tot 2010?
 
 ### Deelvragen 
 1. Hoeveel boeken zijn er in totaal in de OBA te vinden in 2018?
@@ -23,8 +23,14 @@ Op school gewerkt met aantal medestudenten. Geprobeerd data op te halen en onder
 
 #### Deelvraag 1
 
-
 #### Deelvraag 2
 
 
 #### Deelvraag 3
+
+
+## Notities
+* Filter Engels Nederlands __/
+* Binnen een aantal jaar kunnen sorteren __/
+* Meerdere resultaten terugkrijgen
+* Aantal als int terug krijgen
