@@ -7,45 +7,97 @@ const client = new OBA({
 });
 
 client.get('search', {
-  q: 'year:2018 music',                    
-  //librarian: true,
+  q: 'music',             // Language: 'eng'       
   refine: true,
   facet:'type(book)',
-  count:100,
+  count:200,
   log:true,
- // filter: calculate
   })
   .then(results =>{ 
-   // Van de results die we krijgen na de search.
-    let boeken = results.map(book => makeBookObject(book))
-    console.log(boeken)
-    boekendut=[]
-    boekeneng=[]
-   
-    boeken.forEach(function(boek){ // Checken of de boeken voldoen aan de talen Nederlands of Engels.
-      if(boek.taal === 'dut'){
-        boekendut.push(boek)
-      } else if (boek.taal === 'eng'){boeken
-        boekeneng.push(boek)
-      }
-    })
-    fs.writeFile('log.json', JSON.stringify(boeken), 'utf8', function() {})  // De resultaten van boeken naar log.json schrijven
-    console.log('Er zijn',boekendut.length,'Nederlandse boeken gevonden') // Nederlandse boeken teruggeven 
-    console.log('Er zijn',boekeneng.length,'Engelse boeken gevonden') // Engelse boeken terug geven
-  })
   
+    let boeken = results.map(book => makeBookObject(book)) // Geeft array terug op voorwarde van de makeBookObject functie
+    let jaartalObject = jaartalFormatObject(boeken)
+    let aantalboeken = aantalboekFunctie(jaartalObject)
+    let sorteerJaar = aantalboeken.sort(sorteerBoeken)  // Parameter  aantalboeken wordt in functie
+    let filterOpTaal = filterfunctie(sorteerJaar)
 
-  // .then(function(){
-  //   let calculateArray = calculate(array);
-  //   console.log(calculateArray)
-    //fs.writeFile('log.json', JSON.stringify(array), 'utf8', function() {})  // Schrijft naar log.json
-  // })
+    console.log(filterOpTaal)
+    // boekendut=[]
+    // boekeneng=[]
+   
+    // boeken.forEach(function(boek){ // Checken of de boeken voldoen aan de talen Nederlands of Engels.
+    //   if(boek.taal === 'dut'){
+    //     boekendut.push(boek)
+    //   } else if (boek.taal === 'eng'){boeken
+    //     boekeneng.push(boek)
+    //   }
+    // })
+
+    fs.writeFile('log.json', JSON.stringify(filterOpTaal), 'utf8', function() {})  // De resultaten van boeken naar log.json schrijven
+   // console.log('Er zijn',boekendut.length,'Nederlandse boeken gevonden') // Nederlandse boeken teruggeven 
+   // console.log('Er zijn',boekeneng.length,'Engelse boeken gevonden') // Engelse boeken terug geven
+  })
 
   .catch(err => console.log(err))   // Vangt de error af
+  
+  function sorteerBoeken(a, b){ // Vergelijken van de jaren van een boek. Op basis daarvan 1 stapje omhoog of naar beneden
+    if (a.jaartal < b.jaartal)
+      return -1;
+    if (a.jaartal > b.jaartal)
+      return 1;
+    return 0;
+   } 
+
+
+  function aantalboekFunctie(boekenlijst){   // Er wordt een object item aangemaakt, waarin ik jaartal meegeef en het aantalBoeken
+    let array=[]
+    boekenlijst.forEach(function(book){
+      item={
+        jaartal: book.jaartal,
+        aantalBoeken: book.title.length,
+        taal: book.taal
+      }
+      array.push(item)
+    })
+    return array
+  }
+
+
+  function filterfunctie(booklijst){      // filteren op boeken uit het jaartal 2010 of hoger en alleen de engelse boeken tonen
+    let array = booklijst.filter(function(book){
+      if(book.jaartal >= 2010 && book.taal =='eng'){
+        return book
+      }
+    })
+    return array
+  }
+
+
+  function jaartalFormatObject(boeken) {
+    // Credits lock en wouter
+    let array = [];
+    boeken.forEach(object => {
+      // console.log(object)
+      let item = array.find(item => item.jaartal === object.jaartal);
+      if (!item) {
+        item = {
+          jaartal: object.jaartal,
+          title: [],
+          taal: object.taal
+        };
+        array.push(item);
+      }
+      var merged = [].concat(object.title);
+      item.title = item.title.concat(object.title);
+    });
+   
+    return array
+   }
+   
 
   function makeBookObject(book) {
   bookObject = {
-    // Credits van Joost | Afvangen van de undefined properties en die netjes als een string weergeven
+// Credits Joost | Afvangen van de undefined properties en die netjes als een string weergeven
     title: book.titles.title.$t,
     taal: (typeof book.languages === "undefined" || typeof book.languages.language === "undefined") ? 'Taal onbekend' : book.languages.language.$t,
     jaartal: (typeof book.publication === "undefined" || typeof book.publication.year === "undefined") ? 'Jaar onbekend' : book.publication.year.$t,
@@ -53,10 +105,3 @@ client.get('search', {
   }
   return(bookObject)
 };
-
-//function calculate(book){
- // let jaartal = (typeof book.publication === "undefined" || typeof book.publication.year === "undefined") ? 'Jaar onbekend' : book.publication.year.$t;
-    //if(jaartaal == 2016){
-      return true;
-   // }
-//}

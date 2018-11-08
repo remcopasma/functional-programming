@@ -1,7 +1,7 @@
 # Oba
 # Inhoud
 * 1 | Search
-* 2 |Onderzoek
+* 2 | Onderzoek
 * 3 | Bevindingen
 * 4 | Schetsen
 * 5 | Problemen
@@ -9,6 +9,7 @@
 * 7 | Waar ben ik trots op
 * 8 | Credits
 * 9 | Bronnen
+* 10 | Link naar observable
 
 # 1 | Search
 Tijdens het kijken naar de OBA Api heb ik gekeken naar **Search**. Ik ben door de lijst gaan kijken waar ik allemaal op kon zoeken om de Api beter te begrijpen.
@@ -102,6 +103,9 @@ Ik kan uiteindelijk niet zeggen of er een stijging of daling zit in het aantal e
 
 
 # 7 | Stukje code waar ik trots op ben
+* De functie sorteerBoeken heb ik samen met lock geschreven. Deze functie sorteert de jaren op volgorde. Hij vergelijkst steeds 2 jaartallen en op basis daarvan plaatst hij hem omhoog of omlaag. 
+* De functie aantalboekFunctie maakt een object item aan met daarin de properties jaartal en aantalBoeken. In deze properties worden de jaartallen gestopt. En in aantalBoeken wordt de lengte van de array title meegegeven.
+* De filterfunctie toont alleen de boeken die uitgegeven zijn in 2010 of hoger met de taal engels
 ```
 function sorteerBoeken(a, b){ // 
     if (a.jaartal < b.jaartal)
@@ -128,7 +132,7 @@ function sorteerBoeken(a, b){ //
 
   function filterfunctie(booklijst){      // filteren op boeken uit het jaartal 2010 of hoger en alleen de engelse boeken tonen
     let array = booklijst.filter(function(book){
-      if(book.jaartal >= 2010){
+      if(book.jaartal >= 2010 && book.taal =='eng'){
         return book
       }
     })
@@ -145,5 +149,6 @@ function sorteerBoeken(a, b){ //
 # 9 | Bronnen
 Oba Api
 
-
-
+# 10 | Link naar observable
+Ik ben tijd te kort gekomen om mijn visualisatie met d3 helemaal zelf te maken. Ik heb nu in een voorbeeld van **Ray Hong** mijn data van log.json bestand ingeladen zodat mijn data in ieder geval in een barchart staat.
+https://beta.observablehq.com/@remcopasma/d3-barchart 
