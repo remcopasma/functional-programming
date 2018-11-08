@@ -103,7 +103,7 @@ Ik kan uiteindelijk niet zeggen of er een stijging of daling zit in het aantal e
 
 
 # 7 | Stukje code waar ik trots op ben
-* De functie sorteerBoeken heb ik samen met lock geschreven. Deze functie sorteert de jaren op volgorde. Hij vergelijkst steeds 2 jaartallen en op basis daarvan plaatst hij hem omhoog of omlaag. 
+* De functie sorteerBoeken heb ik samen met lock geschreven. Deze functie sorteert de jaren op volgorde. Hij vergelijkt steeds 2 jaartallen en op basis daarvan plaatst hij hem omhoog of omlaag. 
 * De functie aantalboekFunctie maakt een object item aan met daarin de properties jaartal en aantalBoeken. In deze properties worden de jaartallen gestopt. En in aantalBoeken wordt de lengte van de array title meegegeven.
 * De filterfunctie toont alleen de boeken die uitgegeven zijn in 2010 of hoger met de taal engels
 ```
