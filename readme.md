@@ -1,5 +1,6 @@
 # Oba
-* link naar observable
+link naar observable
+
 Ik ben tijd te kort gekomen om mijn visualisatie met d3 helemaal zelf te maken. Ik heb nu in een voorbeeld van **Ray Hong** mijn data van log.json bestand ingeladen zodat mijn data in ieder geval in een barchart staat.
 https://beta.observablehq.com/@remcopasma/d3-barchart 
 # Inhoud
