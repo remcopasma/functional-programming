@@ -1,4 +1,7 @@
 # Oba
+* link naar observable
+Ik ben tijd te kort gekomen om mijn visualisatie met d3 helemaal zelf te maken. Ik heb nu in een voorbeeld van **Ray Hong** mijn data van log.json bestand ingeladen zodat mijn data in ieder geval in een barchart staat.
+https://beta.observablehq.com/@remcopasma/d3-barchart 
 # Inhoud
 * 1 | Search
 * 2 | Onderzoek
@@ -9,7 +12,6 @@
 * 7 | Waar ben ik trots op
 * 8 | Credits
 * 9 | Bronnen
-* 10 | Link naar observable
 
 # 1 | Search
 Tijdens het kijken naar de OBA Api heb ik gekeken naar **Search**. Ik ben door de lijst gaan kijken waar ik allemaal op kon zoeken om de Api beter te begrijpen.
@@ -149,6 +151,3 @@ function sorteerBoeken(a, b){ //
 # 9 | Bronnen
 Oba Api
 
-# 10 | Link naar observable
-Ik ben tijd te kort gekomen om mijn visualisatie met d3 helemaal zelf te maken. Ik heb nu in een voorbeeld van **Ray Hong** mijn data van log.json bestand ingeladen zodat mijn data in ieder geval in een barchart staat.
-https://beta.observablehq.com/@remcopasma/d3-barchart 
