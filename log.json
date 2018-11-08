@@ -1,1 +1,30 @@
-[{"jaartal":"2010","aantalBoeken":2},{"jaartal":"2011","aantalBoeken":2},{"jaartal":"2012","aantalBoeken":2},{"jaartal":"2013","aantalBoeken":1},{"jaartal":"2014","aantalBoeken":7},{"jaartal":"2017","aantalBoeken":2},{"jaartal":"2018","aantalBoeken":1}]
+[
+    {
+        "jaartal": "2010",
+        "aantalBoeken": 2
+    },
+    {
+        "jaartal": "2011",
+        "aantalBoeken": 2
+    },
+    {
+        "jaartal": "2012",
+        "aantalBoeken": 2
+    },
+    {
+        "jaartal": "2013",
+        "aantalBoeken": 1
+    },
+    {
+        "jaartal": "2014",
+        "aantalBoeken": 7
+    },
+    {
+        "jaartal": "2017",
+        "aantalBoeken": 2
+    },
+    {
+        "jaartal": "2018",
+        "aantalBoeken": 1
+    }
+]
