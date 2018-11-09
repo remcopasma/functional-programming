@@ -1,9 +1,10 @@
 const OBA = require('./obaMaanWrapperDing'); // Wouter heeft dit bestand geschreven en mij hierbij geholpen//
 const fs = require('fs');
+require('dotenv').config()
 
 const client = new OBA({
-  public: '1e19898c87464e239192c8bfe422f280',
-  secret: '4289fec4e962a33118340c888699438d'
+  public: process.env.PUBLIC_KEY,
+  secret: process.env.SECRET_KEY
 });
 
 client.get('search', {
