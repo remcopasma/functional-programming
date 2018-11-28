@@ -1,3 +1,19 @@
+# Herkansing / verbetering
+* Feedback: Slechte visualisatie
+
+## Wat heb ik veranderd
+Voor het eerste beoordelingsmoment had ik een visualisatie gemaakt in observable. Dit omdat ik te weinig tijd had om zelf iets te maken met d3. Ik heb nu zelf in d3 een line chart gemaakt waarmee ik de engelse boeken vanaf het jaar 2010 binnen de categorie muziek ophaal.
+Ik heb mijn data gemanipuleerd op het aantal boeken. 
+De bestanden die nieuw zijn:
+* index.html
+* script.js
+* style.css
+
+Link naar visualisatie: https://wonderful-colden-8a7d30.netlify.com/
+
+## Bronnen
+* https://bl.ocks.org/pstuffa/26363646c478b2028d36e7274cedefa6
+* Frontend data
 # Oba
 link naar observable
 
