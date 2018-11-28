@@ -9,7 +9,7 @@ De bestanden die nieuw zijn:
 * script.js
 * style.css
 
-Link naar visualisatie: https://wonderful-colden-8a7d30.netlify.com/ 
+Link naar visualisatie: https://wonderful-colden-8a7d30.netlify.com/
 
 ## Bronnen
 * https://bl.ocks.org/pstuffa/26363646c478b2028d36e7274cedefa6
