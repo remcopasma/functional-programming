@@ -1,0 +1,26 @@
+body{
+height:100vh;
+margin:0;
+}
+
+
+svg{
+    width:100vw;
+    height:100vh;
+    background-color:#a79d9d;
+}
+
+.labelx{
+    transform: translate(580px,550px);
+    font-weight:bold;
+}
+
+.labely{
+    transform: translate(-34px,300px) rotate(-90deg);
+    font-weight:bold;
+}
+
+.titel{
+    transform: translate(34px,-0);
+    font-weight:bold; 
+}
